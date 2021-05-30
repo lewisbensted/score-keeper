@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Score extends Component{
     constructor(props){
         super(props)
-        this.state={playerOneScore:0, playerTwoScore:0, playTo:11, message:''}
+        this.state={playerOneScore:0, playerTwoScore:0, playTo:7, message:''}
     }
 
     increasePlayerOne=()=>{
@@ -49,7 +49,7 @@ class Score extends Component{
         return(
             <div>
                 <div>
-                    <select defaultValue={this.state.playTo} id='playto' onChange={this.changePlayTo}>
+                    <select defaultValue={this.state.playTo} data-testid='playto' id='playto' onChange={this.changePlayTo}>
                         <option value='7'>7</option>
                         <option value='8'>8</option>
                         <option value='9'>9</option>
@@ -75,7 +75,7 @@ class Score extends Component{
                     <button id ='player-two-button'  data-testid='player-two-button' onClick={this.increasePlayerTwo}>+1 Player Two</button>
                     <button data-testid='reset' onClick={this.reset}>Reset</button>
                 </div>
-                <h2>
+                <h2 data-testid='message'>
                     {this.state.message}
                 </h2>
             </div>
